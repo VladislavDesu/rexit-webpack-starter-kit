@@ -1,0 +1,23 @@
+{
+  "name": "rexit-webpack-starter-kit",
+  "version": "1.0.0",
+  "description": "rexit webpack starter kit",
+  "main": "webpack.config.js",
+  "scripts": {
+    "build": "cross-env NODE_ENV=production webpack --mode production",
+    "dev": "cross-env NODE_ENV=development webpack --mode development"
+  },
+  "author": "Vladislav Gryadko (vgryadko@gmail.com)",
+  "license": "ISC",
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "html-webpack-plugin": "^5.3.2",
+    "pug": "^3.0.2",
+    "pug-loader": "^2.4.0",
+    "webpack": "^5.58.1",
+    "webpack-cli": "^4.9.0"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  }
+}
