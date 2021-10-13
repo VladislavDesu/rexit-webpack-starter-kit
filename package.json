@@ -1,7 +1,7 @@
 {
-  "name": "webpack-lesson",
+  "name": "rexit-webpack-starter-kit",
   "version": "1.0.0",
-  "description": "simple webpack",
+  "description": "webpack starter kit",
   "main": "index.js",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --mode production",

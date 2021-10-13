@@ -13,20 +13,20 @@ const isProd = !isDev;
 const filename = (ext) => isDev ? `[name].${ext}` : `[name].[contenthash].${ext}`;
 
 const optimization = () => {
-  const configObj = {
+  const config = {
     splitChunks: {
       chunks: 'all'
     }
   };
 
   if (isProd) {
-    configObj.minimizer = [
+    config.minimizer = [
       new OptimizeCssAssetWebpackPlugin(),
       new TerserWebpackPlugin()
     ];
   }
 
-  return configObj;
+  return config;
 };
 
 const plugins = () => {
@@ -52,7 +52,7 @@ const plugins = () => {
   if (isProd) {
     basePlugins.push(
       new ImageminPlugin({
-        bail: false, // Ignore errors on corrupted images
+        bail: false,
         cache: true,
         imageminOptions: {
           plugins: [
