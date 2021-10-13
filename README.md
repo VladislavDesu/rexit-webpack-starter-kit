@@ -1,1 +1,0 @@
-# rexit-webpack-starter-kit
