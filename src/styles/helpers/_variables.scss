@@ -1,0 +1,31 @@
+/*--------------------
+  VARIABLES
+--------------------*/
+
+// LESS - @
+// SCSS, SASS - $
+// CSS - var(--variable)
+
+// COLOR
+$white: #ffffff;
+$black: #000000;
+
+// FONT
+$ff-base: 'Arial', sans-serif;
+$fw-base: 400;
+$fs-base: normal;
+$fz-base: 16px;
+$lh-base: 1.5;
+
+// MEDIA
+// min
+$sm-min: 576px;
+$md-min: 768px;
+$lg-min: 992px;
+$xl-min: 1200px;
+
+// max
+$xs-max: 575px;
+$sm-max: 767px;
+$md-max: 991px;
+$lg-max: 1199px;

@@ -1,16 +1,30 @@
 const path = require('path');
+const fs = require('fs');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const OptimizeCssAssetWebpackPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack');
 
-const isDev = process.env.NODE_ENV === 'development';
-const isProd = !isDev;
+const PATH = {
+  src: path.resolve(__dirname, 'src'),
+  build: path.resolve(__dirname, 'app'),
+  // pages: path.resolve(__dirname, 'dev/layout/pages'),
+}
 
-const filename = (ext) => isDev ? `[name].${ext}` : `[name].[contenthash].${ext}`;
+// const PAGES = fs.readdirSync(PATH.pages).filter(fileName => fileName.endsWith('.pug'));
+
+// const createHtmlPlugins = (pages) => pages.map(page => new HTMLWebpackPlugin({
+//   template: `${PATH.pages}/${page}`,
+//   filename: `./${page.replace(/\.pug/, '.html')}`
+// }))
+// const htmlPluginsArr = createHtmlPlugins(PAGES);
+
+const isDevelopment = process.env.NODE_ENV === 'development';
+const isProduction = !isDevelopment;
+
+const filename = (ext) => isDevelopment ? `[name].${ext}` : `[name].[contenthash].${ext}`;
 
 const optimization = () => {
   const config = {
@@ -19,7 +33,7 @@ const optimization = () => {
     }
   };
 
-  if (isProd) {
+  if (isProduction) {
     config.minimizer = [
       new OptimizeCssAssetWebpackPlugin(),
       new TerserWebpackPlugin()
@@ -35,21 +49,16 @@ const plugins = () => {
       template: path.resolve(__dirname, 'src/index.html'),
       filename: 'index.html',
       minify: {
-        collapseWhitespace: isProd
+        collapseWhitespace: isProduction
       }
     }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: `./css/${filename('css')}`
-    }),
-    new CopyWebpackPlugin({
-      patterns: [
-        {from: path.resolve(__dirname, 'src/assets') , to: path.resolve(__dirname, 'app')}
-      ]
-    }),
+    })
   ];
 
-  if (isProd) {
+  if (isProduction) {
     basePlugins.push(
       new ImageminPlugin({
         bail: false,
@@ -79,17 +88,19 @@ const plugins = () => {
 };
 
 module.exports = {
-  context: path.resolve(__dirname, 'src'),
+  context: PATH.src,
   mode: 'development',
-  entry: './js/main.js',
+  entry: {
+    index: './js/index.js'
+  },
   output: {
     filename: `./js/${filename('js')}`,
-    path: path.resolve(__dirname, 'app'),
+    path: PATH.build,
     publicPath: ''
   },
   devServer: {
     historyApiFallback: true,
-    contentBase: path.resolve(__dirname, 'app'),
+    static: PATH.build,
     open: true,
     compress: true,
     hot: true,
@@ -97,7 +108,7 @@ module.exports = {
   },
   optimization: optimization(),
   plugins: plugins(),
-  devtool: isProd ? false : 'source-map',
+  devtool: isProduction ? false : 'source-map',
   module: {
     rules: [
       {
@@ -105,19 +116,19 @@ module.exports = {
         loader: 'html-loader',
       },
       {
-        test: /\.css$/i,
+        test: /\.css$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              hmr: isDev
+              hmr: isDevelopment
             },
           },
           'css-loader'
         ],
       },
       {
-        test: /\.s[ac]ss$/,
+        test: /\.scss$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
@@ -141,12 +152,12 @@ module.exports = {
         use: [{
           loader: 'file-loader',
           options: {
-            name: `./img/${filename('[ext]')}`
+            name: `./images/${filename('[ext]')}`
           }
         }],
       },
       {
-        test: /\.(?:|woff2)$/,
+        test: /\.(?:|woff2|woff)$/,
         use: [{
           loader: 'file-loader',
           options: {
