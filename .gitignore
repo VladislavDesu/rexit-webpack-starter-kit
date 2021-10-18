@@ -3,3 +3,10 @@ node_modules/
 build/
 dist/
 app/
+design/
+package-lock.json
+.vscode/
+.DS_Store
+*.rar
+*.zip
+.husky/
