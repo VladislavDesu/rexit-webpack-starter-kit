@@ -15,17 +15,17 @@
 // }
 
 @mixin size($width, $height: $width) {
-   width: $width;
-   height: $height;
+  width: $width;
+  height: $height;
 }
 
 @mixin font-face($font-name, $path, $weight: 400, $style: normal) {
-   @font-face {
-      font-weight: $weight;
-      font-family: $font-name;
-      font-style: $style;
-      src: url(#{$path}.woff2) format('woff2');
-      font-display: swap;
-      unicode-range: U+000-5FF; /* Latin glyphs */
-   }
+  @font-face {
+    font-weight: $weight;
+    font-family: $font-name;
+    font-style: $style;
+    src: url(#{$path}.woff2) format("woff2");
+    font-display: swap;
+    unicode-range: U+000-5FF; /* Latin glyphs */
+  }
 }

@@ -4,31 +4,31 @@
 
 // HELPERS
 // Variables and mixins
-@import 'helpers/variables';
-@import 'helpers/mixins';
+@import "helpers/variables";
+@import "helpers/mixins";
 
 // LIBS
 // external libraries
-@import 'libs/normalize';
+@import "libs/normalize";
 
 // BASE
 // Base styles
-@import 'base/fonts';
-@import 'base/common';
+@import "base/fonts";
+@import "base/common";
 
 // COMPONENTS
 // Specific components like a slider, a loader, a widget
-@import 'components/button';
+@import "components/button";
 
 // MODULES
 // Modules of the layout
-@import 'modules/header';
-@import 'modules/footer';
+@import "modules/header";
+@import "modules/footer";
 
 // SECTIONS
 // Sections of the layout
-@import 'sections/hero';
+@import "sections/hero";
 
 // MEDIA
 // Media queries of the layout
-@import 'media/mobile';
+@import "media/mobile";

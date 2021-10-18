@@ -73,7 +73,7 @@ npm run dev            # Сборка проекта для разработки
 
 Для проверки кода на ошибки и соответствие код-гайдам.
 
-`.stylelintrc` - конфиг для проверки (`less, scss, sass`) [stylelint](https://stylelint.io/).
+`.stylelintrc` - конфиг для проверки [stylelint](https://stylelint.io/).
 
 ## Webpack
 
