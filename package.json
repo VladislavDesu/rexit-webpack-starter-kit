@@ -30,6 +30,7 @@
     "html-loader": "^1.3.2",
     "html-webpack-plugin": "^4.5.0",
     "htmlhint": "^0.15.2",
+    "husky": "^7.0.2",
     "imagemin-gifsicle": "^7.0.0",
     "imagemin-jpegtran": "^7.0.0",
     "imagemin-mozjpeg": "^9.0.0",
@@ -37,13 +38,14 @@
     "imagemin-pngquant": "^9.0.1",
     "imagemin-svgo": "^8.0.0",
     "imagemin-webpack": "^5.1.1",
+    "lint-staged": "^11.2.3",
     "mini-css-extract-plugin": "^1.3.1",
     "node-sass": "^5.0.0",
     "optimize-css-assets-webpack-plugin": "^5.0.4",
     "pug": "^3.0.2",
     "pug-loader": "^2.4.0",
     "sass-loader": "^10.1.0",
-    "stylelint": "^13.8.0",
+    "stylelint": "^13.13.1",
     "stylelint-config-htmlacademy": "^0.1.10",
     "stylelint-order-htmlacademy": "^2.0.3",
     "terser-webpack-plugin": "^5.0.3",
@@ -53,5 +55,15 @@
   },
   "dependencies": {
     "normalize.css": "^8.0.1"
+  },
+  "lint-staged": {
+    "*.scss": [
+      "stylelint --fix"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
