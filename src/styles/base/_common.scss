@@ -3,6 +3,10 @@
 --------------------*/
 @import "../helpers/_variables.scss";
 
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   font-weight: $fw-base;
