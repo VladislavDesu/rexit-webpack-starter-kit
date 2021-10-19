@@ -3,7 +3,9 @@
 --------------------*/
 @import "../helpers/_variables.scss";
 
-* {
+*,
+*:after,
+*:before {
   box-sizing: border-box;
 }
 
