@@ -4,8 +4,8 @@
 @import "../helpers/_variables.scss";
 
 *,
-*:after,
-*:before {
+*::after,
+*::before {
   box-sizing: border-box;
 }
 
@@ -51,7 +51,7 @@ button {
   padding: 0;
   font: inherit;
   background-clip: padding-box;
-  border: 1px solid #666;
+  border: 1px solid #666666;
   border-radius: 0;
   outline: none;
   appearance: none;
