@@ -17,7 +17,7 @@ const PATH = {
   layout: path.resolve(__dirname, 'src/layout'),
   fonts: path.resolve(__dirname, 'src/fonts'),
 }
-js
+
 const isDevelopment = process.env.NODE_ENV === 'development';
 const isProduction = !isDevelopment;
 
