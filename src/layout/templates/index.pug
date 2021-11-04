@@ -16,9 +16,9 @@ head
   meta(name="keywords" content=keywords)
   meta(name="author" content=author)
   meta(name="description" content=description)
-    body
-      .wrapper
-        include ../modules/header
-        .content
-          block content
-        include ../modules/footer
+body
+  .wrapper
+    +header
+    .content
+      +sectionHero
+    +footer

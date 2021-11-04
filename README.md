@@ -52,7 +52,6 @@ npm run dev            # Сборка проекта для разработки
 - `src/styles/components/` - отдельные встраиваемые компоненты, виджеты и т.п.
 - `src/styles/modules/` - блоки, такие как header, footer.
 - `src/styles/libs/` - стили установленных библиотек.
-- `src/styles/media/` - стили для адаптивных сайтов (desktop first).
 - `src/styles/styles.scss` - главный стилевой файл, в который импортируются все компоненты.
 
 ## Скрипты

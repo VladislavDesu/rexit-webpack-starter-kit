@@ -14,7 +14,7 @@
     "build": "cross-env NODE_ENV=production webpack --mode production",
     "dev": "cross-env NODE_ENV=development webpack --mode development",
     "start": "cross-env NODE_ENV=development webpack serve --mode development",
-    "prepare": "husky install && husky add .husky/pre-commit \"npm run lint\""
+    "prepare": "husky install && husky add .husky/pre-commit \"npm run dev && npm run lint\""
   },
   "author": "Vladislav Gryadko (vgyadko@gmail.com)",
   "license": "ISC",
