@@ -4,8 +4,7 @@
 
 // HELPERS
 // Variables and mixins
-@import "helpers/variables";
-@import "helpers/mixins";
+@import "helpers/utils";
 
 // LIBS
 // external libraries
@@ -28,7 +27,3 @@
 // SECTIONS
 // Sections of the layout
 @import "sections/hero";
-
-// MEDIA
-// Media queries of the layout
-@import "media/mobile";

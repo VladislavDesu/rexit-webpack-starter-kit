@@ -19,6 +19,18 @@
   height: $height;
 }
 
+@mixin response-image {
+  max-width: 100%;
+  height: auto;
+}
+
+
+@mixin media($widthValue, $width: max-width) {
+  @media only screen and ($width: $widthValue) {
+    @content;
+  }
+}
+
 @mixin font-face($font-name, $path, $weight: 400, $style: normal) {
   @font-face {
     font-weight: $weight;

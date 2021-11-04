@@ -1,21 +1,24 @@
 block variables
+block modules
+block sections
+block components
 
 doctype html
 html(lang=lang)
-    head
-        title #{title}
+head
+  title= title
 
-        meta(charset="utf-8")
-        <!--[if IE]>
-        meta(http-equiv='X-UA-Compatible', content="IE = edge")
-        <![endif]-->
-        meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
-        meta(name="keywords" content=keywords)
-        meta(name="author" content=author)
-        meta(name="description" content=description)
+  meta(charset="UTF-8")
+  <!--[if IE]>
+  meta(http-equiv="X-UA-Compatible", content="IE = edge")
+  <![endif]-->
+  meta(name="viewport" content="width=device-width, initial-scale=1.0")
+  meta(name="keywords" content=keywords)
+  meta(name="author" content=author)
+  meta(name="description" content=description)
     body
-        .wrapper
-            include ../modules/header
-            .content
-                block content
-            include ../modules/footer
+      .wrapper
+        include ../modules/header
+        .content
+          block content
+        include ../modules/footer

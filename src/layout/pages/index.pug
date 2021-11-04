@@ -1,11 +1,18 @@
 extends ../templates/index
 
 block variables
-    - var title = "Главная страница";
-    - var lang = "ru-RU";
-    - var description = "";
-    - var author = "";
-    - var keywords = "";
+  - var title = "Главная страница";
+  - var lang = "ru-RU";
+  - var description = "";
+  - var author = "";
+  - var keywords = "";
 
-block content
-    include ../content/index
+block modules
+  include ../modules/footer
+  include ../modules/header
+
+block sections
+  include ../sections/hero
+
+block components
+  include ../components/buttons/buttons

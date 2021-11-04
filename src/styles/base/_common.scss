@@ -1,7 +1,7 @@
 /*--------------------
   COMMON STYLES
 --------------------*/
-@import "../helpers/_variables.scss";
+@import "../helpers/utils";
 
 *,
 *::after,
@@ -25,6 +25,8 @@ p {
 
 img {
   display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 address {

@@ -4,7 +4,6 @@ build/
 dist/
 app/
 design/
-package-lock.json
 .vscode/
 .DS_Store
 *.rar

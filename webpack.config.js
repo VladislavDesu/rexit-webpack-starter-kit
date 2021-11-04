@@ -91,7 +91,10 @@ module.exports = {
   context: PATH.src,
   mode: 'development',
   entry: {
-    index: './js/index.js'
+    index: [
+      './js/index.js',
+      './styles/index.scss',
+    ],
   },
   output: {
     filename: `./js/${filename('js')}`,
