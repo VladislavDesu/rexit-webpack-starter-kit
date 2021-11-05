@@ -1,5 +1,4 @@
 {
-  "validateDivTags": true,
   "validateAttributeSeparator": {
     "separator": ", ",
     "multiLineSeparator": ",\n "
